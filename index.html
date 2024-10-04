@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Calculatrice basique</title>
+</head>
+<body>
+    <script>
+
+// Stockage en mémoire des valeurs
+let theOrCofee, sugar, milk, milkType, validation;
+
+// Initialisation de la boucle avec la validation = incorrecte
+validation = `incorrecte`; 
+// Boucle tant que les réponses sont incorrectes
+while (validation === "incorrecte") {
+
+// Intégration des prompts
+    theOrCofee = prompt(`Souhaitez-vous du thé ou du café ? (du thé / du café)`);
+    sugar = prompt(`Avec ou sans sucre ? (avec du sucre / sans sucre)`);
+    milk = prompt(`Souhaitez-vous du lait ? (Oui / Non)`);
+
+// Intégration d'une condition si le format des réponses saisi n'est pas le bon = incorrect//
+    if ((theOrCofee !== `du thé` && theOrCofee !== `du café`) || 
+        (sugar !== `avec du sucre` && sugar !== `sans sucre`) || 
+        (milk !== `Oui` && milk !== `Non`)) {            
+// Si les réponses ne sont pas valides, on demande de recommencer
+        validation = "incorrecte";
+        prompt("Veuillez respecter le format des réponses.");
+// Si les réponses sont valides, on sort de la boucle pour aller au choix du lait
+    } else {
+        validation = `correcte`;
+    }
+}
+
+// Intégration d'une condition sur le type de lait
+if (milk === `Oui`) {
+    milkType = prompt(`Lait normal ou Lait végétal ?`);
+// Commande avec lait de type normal
+    if (milkType === `Lait normal`) {
+        console.log(`Vous avez choisi : ${theOrCofee}, ${sugar}, avec du ${milkType}.`);
+        finalValidation = prompt(`Appuyer sur [OK] lorsque vous avez pris votre café`);
+// Commande avec lait de type végétal
+    } else if (milkType === "Lait végétal") {
+        console.log(`Vous avez choisi : ${theOrCofee}, ${sugar}, avec du ${milkType}.`);
+        finalValidation = prompt(`Appuyer sur [OK] lorsque vous avez pris votre café`);
+    }
+} else {
+
+// Sortie de la condition avec une commande sans lait
+    console.log(`Vous avez choisi : ${theOrCofee}, ${sugar}, sans lait`);
+    finalValidation = prompt(`Appuyer sur [OK] lorsque vous avez pris votre café`);
+}
+
+    </script>
+</body>
+</html>
