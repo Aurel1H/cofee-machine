@@ -1,0 +1,51 @@
+//Initialisation de la variable "boisson"
+let beverage = prompt(`the ou cafe ?`);
+
+//Boucle 1 sur le choix de la boisson
+while (beverage !== 'the' && beverage !== 'cafe') {
+  console.log('Choisissez du thé ou du café svp');
+  beverage = prompt(`the ou cafe ?`);
+}
+console.log(beverage);
+
+//Initialisation de la variable "sucre"
+let sugar = prompt(`Avec ou sans sucre ?`);
+
+//Boucle 2 sur le choix du avec ou sans sucre
+while (sugar !== `avec du sucre` && sugar !== `sans sucre`) {
+  console.log(`Choisissez "avec du sucre" ou "sans sucre" svp`);
+  sugar = prompt(`Avec ou sans sucre ?`);
+  }
+  console.log(sugar);  
+
+//Initialisation de la variable "choix de lait" oui/non"
+let milk = prompt(`Voulez-vous du lait ?`);
+
+//Boucle 3 sur le choix de lait
+while (milk !== `oui` && milk !== `non`) {
+  console.log(`Choisissez par oui ou par non svp`);
+  milk = prompt(`Voulez-vous du lait ?`)
+  }
+  console.log(milk);
+
+//Initialisation de la variable sur le type de lait
+let milkType;
+
+//Si le choix de lait est "oui"
+if (milk === "oui") {
+  milkType = prompt(`Choisissez du "lait animal" ou du "lait végétal"`);
+
+//Boucle 4 sur le choix du type de lait   
+  while (milkType !== `lait animal` && milkType !== `lait végétal`) {
+    console.log(`Choisissez "lait animal" ou "lait végétal"`);
+    milkType = prompt(`Choisissez du "lait animal" ou du "lait végétal"`);
+  }
+}
+
+//Si le choix de lait est "non"
+if (milk === "non") {
+  console.log(`Récapitulatif de votre commande : vous avez choisi un ${beverage}, ${sugar} sans lait.`);
+//Si le choix de lait est "oui"
+} else {
+  console.log(`Récapitulatif de votre commande : vous avez choisi un ${beverage}, ${sugar} au ${milkType}.`);
+}
