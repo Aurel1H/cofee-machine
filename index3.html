@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Calculatrice basique</title>
+</head>
+<body>
+    <script>
+
+//Création de la fonction qui vérifie la validité des réponses
+function validAnswer(promptMessage, validOptionA, validOptionB) {
+// Initialisation des prompts
+  let input = prompt(promptMessage); 
+  
+// Boucle tant que l'entrée n'est pas valide
+  while ((input !== validOptionA && input !== validOptionB)) {
+    console.log(`Choisissez parmi les options suivantes : ${validOptionA} ou ${validOptionB}`);
+// Redemande si l'entrée n'est pas valide
+    input = prompt(promptMessage); 
+  }
+// Retourne l'entrée valide
+  return input;
+}
+
+// Utilisation de la fonction "validAnswer" pour la boisson
+let beverage = validAnswer('Choisissez du thé ou du café svp ?','thé','café');
+console.log(`Vous avez choisi : ${beverage}`);
+
+// Utilisation de la fonction "validAnswer" pour le sucre
+let sugar = validAnswer('Avec ou sans sucre ?','avec du sucre','sans sucre');
+console.log(`Vous avez choisi : ${sugar}`);
+
+// Utilisation de la fonction "validAnswer" pour le lait
+let milk = validAnswer('Voulez-vous du lait ?','oui','non');
+console.log(`Vous avez choisi : ${sugar}`);
+
+// Déclare la variable milkType
+let milkType;
+
+// Si le choix de lait est "oui"
+if (milk === "oui") {
+// Utilisation de la fonction "validAnswer" dans la variable "milkType"
+  milkType = validAnswer('Choisissez du "lait animal" ou du "lait végétal"', 'lait animal', 'lait végétal');
+  console.log(`Vous avez choisi : ${milkType}`);
+}
+
+// Récapitulatif de la commande
+if (milk === "non") {
+  console.log(`Récapitulatif de votre commande : vous avez choisi un ${beverage}, ${sugar} sans lait.`);
+} else {
+  console.log(`Récapitulatif de votre commande : vous avez choisi un ${beverage}, ${sugar} au ${milkType}.`);
+}
+
+    </script>
+</body>
+</html>
